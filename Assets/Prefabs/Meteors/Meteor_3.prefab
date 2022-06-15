@@ -121,6 +121,7 @@ MonoBehaviour:
   _minSpeed: 0.5
   _maxSpeed: 5
   _torque: 4
+  _destroySfx: {fileID: 8300000, guid: 6c46fc7aa23ef4444b98f5fbe9f61e18, type: 3}
 --- !u!114 &1347572999052911878
 MonoBehaviour:
   m_ObjectHideFlags: 0

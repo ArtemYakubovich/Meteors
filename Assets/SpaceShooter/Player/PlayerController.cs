@@ -4,17 +4,21 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _acceliration;
-    [SerializeField] private Projectile _laserWeapon;
+    [Space] [SerializeField] private Projectile _laserWeapon;
     [SerializeField] private Cooldown _laserCooldown;
+    [Space] [SerializeField] private AudioClip _crashSfx;
 
     public float RotationDirection { get; set; }
     public float Thrust { get; set; }
     public bool UseWeapon { get; set; }
 
     private Rigidbody2D _body;
+    private AudioSource _audio;
+
     private void Start()
     {
         _body = GetComponent<Rigidbody2D>();
+        _audio = FindObjectOfType<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -44,5 +48,14 @@ public class PlayerController : MonoBehaviour
         var progectile = Instantiate(_laserWeapon, transform.position, transform.rotation);
         progectile.Lunch(_body.velocity, transform.up);
         _laserCooldown.Reset();
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        var meteor = other.gameObject.GetComponent<Meteor>();
+        if(meteor != null)
+        {
+            _audio.PlayOneShot(_crashSfx);
+        }
     }
 }

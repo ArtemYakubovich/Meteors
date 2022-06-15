@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1347572999052911878}
   - component: {fileID: 8229099322029101254}
   m_Layer: 8
-  m_Name: Meteor _1
+  m_Name: Meteor_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   _minSpeed: 3
   _maxSpeed: 6
   _torque: 25
+  _destroySfx: {fileID: 8300000, guid: 6c46fc7aa23ef4444b98f5fbe9f61e18, type: 3}
 --- !u!114 &1347572999052911878
 MonoBehaviour:
   m_ObjectHideFlags: 0
