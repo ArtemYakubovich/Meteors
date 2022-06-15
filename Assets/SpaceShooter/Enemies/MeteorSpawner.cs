@@ -4,6 +4,7 @@ public class MeteorSpawner : MonoBehaviour
 {
     [SerializeField] private Meteor[] _meteors;
     [SerializeField] private int _initialMeteors;
+    [SerializeField] private Cooldown _spawnCooldown;
 
     private Bounds _screenBounds;
 
@@ -11,6 +12,15 @@ public class MeteorSpawner : MonoBehaviour
     {
         _screenBounds = FindObjectOfType<ScreenBounds>().TresholdBounds;
         SpawnMeteors(_initialMeteors);
+    }
+
+    private void Update()
+    {
+        if(_spawnCooldown.IsReady)
+        {
+            SpawnRandomMeteor();
+            _spawnCooldown.Reset();
+        }
     }
 
     private void SpawnMeteors(int count)

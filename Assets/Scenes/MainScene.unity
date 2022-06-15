@@ -262,7 +262,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _meteors:
   - {fileID: 1347572999052911928, guid: c74c21d3d26bec840bbd608df042ab18, type: 3}
+  - {fileID: 1347572999052911928, guid: 2a624881461531a4ebb4efb0bb673a2d, type: 3}
+  - {fileID: 1347572999052911928, guid: e97643b4436ace645beac8ba3f0e95ba, type: 3}
+  - {fileID: 1347572999052911928, guid: f71963103772e8f418a95a6d66baaace, type: 3}
   _initialMeteors: 5
+  _spawnCooldown:
+    _value: 2
 --- !u!1 &790593128
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +462,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotationSpeed: 180
   _acceliration: 0.2
+  _laserWeapon: {fileID: 8701695259345394656, guid: e40787928a11d384c9c331edab5cd90e,
+    type: 3}
+  _laserCooldown:
+    _value: 0.25
 --- !u!58 &1826782682
 CircleCollider2D:
   m_ObjectHideFlags: 0
