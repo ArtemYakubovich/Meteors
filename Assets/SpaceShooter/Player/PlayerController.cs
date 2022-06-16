@@ -14,11 +14,13 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D _body;
     private AudioSource _audio;
+    private GameSession _gameSession;
 
     private void Start()
     {
         _body = GetComponent<Rigidbody2D>();
         _audio = FindObjectOfType<AudioSource>();
+        _gameSession = FindObjectOfType<GameSession>();
     }
 
     private void FixedUpdate()
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour
         if(meteor != null)
         {
             _audio.PlayOneShot(_crashSfx);
+            _gameSession.ChangeLife(-1);
         }
     }
 }
